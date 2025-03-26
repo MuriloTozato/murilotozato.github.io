@@ -1,46 +1,45 @@
-import React, {useContext} from "react";
-import "./Talks.scss";
+import React, { useContext } from "react";
 import TalkCard from "../../components/talkCard/TalkCard";
-import {talkSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import "./Talks.scss";
+import { talkSection } from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 
-export default function Talks() {
-  const {isDark} = useContext(StyleContext);
+export default function Testimonials() {
+  const { isDark } = useContext(StyleContext);
+
   if (!talkSection.display) {
     return null;
   }
+
   return (
-    <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="talks">
-        <div className="talk-header">
-          <h1 className="talk-header-title">{talkSection.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode talk-header-subtitle"
-                : "subTitle talk-header-subtitle"
-            }
-          >
-            {talkSection.subtitle}
-          </p>
-          {talkSection.talks.map((talk, i) => {
-            return (
-              <TalkCard
-                key={i}
-                talkDetails={{
-                  title: talk.title,
-                  subtitle: talk.subtitle,
-                  slides_url: talk.slides_url,
-                  event_url: talk.event_url,
-                  image: talk.image,
-                  isDark
-                }}
-              />
-            );
-          })}
+    <div className="main" id="Testimonials">
+      <div className="Testimonials-header">
+        <h1 className="Testimonials-header-title">{talkSection.title}</h1>
+        <p
+          className={
+            isDark
+              ? "dark-mode Testimonials-header-subtitle"
+              : "subTitle Testimonials-header-subtitle"
+          }
+        >
+          {talkSection.subtitle}
+        </p>
+        <div className="talk-cards-div">
+          {talkSection.talks.map((talk, i) => (
+            <TalkCard
+              key={i}
+              talkDetails={{
+                quote: talk.quote,
+                name: talk.name,
+                role: talk.role,
+                profile_url: talk.profile_url,
+                image: talk.image,
+                isDark,
+              }}
+            />
+          ))}
         </div>
       </div>
-    </Fade>
+    </div>
   );
 }

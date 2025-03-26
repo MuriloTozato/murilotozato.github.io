@@ -1,31 +1,31 @@
-@import "../../_globalColor";
-
-.dev-icons {
-  padding-left: 0;
-  list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+.software-skills-main-div {
   text-align: center;
 }
 
+.dev-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #868E96;
 }
 
-.software-skill-inline > i {
-  color: $subTitle;
+.software-skill-inline i {
+  font-size: 40px; /* Size of Font Awesome icons */
+  margin-bottom: 10px;
 }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
-}
-.software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
-}
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+.skill-image {
+  width: 40px; /* Match the size of Font Awesome icons */
+  height: 40px;
+  margin-bottom: 10px;
 }

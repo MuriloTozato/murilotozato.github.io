@@ -2,10 +2,11 @@
 
 .contact-div-main {
   display: flex;
-}
-
-.dark-mode a {
-  color: $textColorDark;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-div-main > * {
@@ -15,6 +16,7 @@
 .contact-title {
   font-size: 65px;
   font-weight: 400;
+  color: #ffffff !important; /* Ensure white color */
 }
 
 .contact-detail,
@@ -22,7 +24,7 @@
   margin-top: 20px;
   font-size: 40px;
   font-weight: 400;
-  color: $subTitle;
+  color: #ffffff !important; /* Ensure white color */
   text-decoration: none;
 }
 
@@ -35,6 +37,7 @@
 
 .contact-subtitle {
   text-transform: uppercase;
+  color: #ffffff !important; /* Ensure white color */
 }
 
 .contact-text-div {
@@ -45,11 +48,20 @@
   margin-top: 4rem;
 }
 
-.contact-image-div > img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1.5rem;
-  margin-top: -4rem;
+.contact-image-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* Align to the top to allow manual margin adjustment */
+}
+
+.face-icon {
+  width: 300px; /* Increase size to make it bigger */
+  height: 300px;
+  border-radius: 50%; /* Circular shape */
+  border: 5px solid #8B5CF6; /* Purple border */
+  margin-left: 2rem;
+  margin-top: 2rem; /* Keep the downward shift */
+  object-fit: cover; /* Prevent distortion by maintaining aspect ratio */
 }
 
 /* Media Query */

@@ -1,6 +1,6 @@
 import React from "react";
 import "./SoftwareSkill.scss";
-import {skillsSection} from "../../portfolio";
+import { skillsSection } from "../../portfolio";
 
 export default function SoftwareSkill() {
   return (
@@ -14,7 +14,15 @@ export default function SoftwareSkill() {
                 className="software-skill-inline"
                 name={skills.skillName}
               >
-                <i className={skills.fontAwesomeClassname}></i>
+                {skills.fontAwesomeClassname ? (
+                  <i className={skills.fontAwesomeClassname}></i>
+                ) : skills.imagePath ? (
+                  <img
+                    src={require(`../../assets/images/${skills.imagePath}`)}
+                    alt={skills.skillName}
+                    className="skill-image"
+                  />
+                ) : null}
                 <p>{skills.skillName}</p>
               </li>
             );

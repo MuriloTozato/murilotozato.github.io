@@ -1,389 +1,322 @@
-/* Change this file to get your personal Portfolio */
+/* Personal Portfolio Configuration for Murilo Tozato - UX/UI Designer */
 
-// To change portfolio colors globally go to the  _globalColor.scss file
+// To change portfolio colors globally go to the _globalColor.scss file
 
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
+import splashAnimation from "./assets/lottie/splashAnimation"; // Replace with your custom animation if desired
 
 // Splash Screen
-
 const splashScreen = {
   enabled: true, // set false to disable splash screen
   animation: splashAnimation,
-  duration: 2000 // Set animation duration as per your animation
+  duration: 2000, // Set animation duration as per your animation
 };
 
 // Summary And Greeting Section
-
 const illustration = {
-  animated: true // Set to false to use static SVG
+  animated: true, // Set to false to use static SVG
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Murilo Tozato",
+  title: "Hello! I'm Murilo",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A passionate UX/UI Designer with experience in creating immersive digital experiences by blending creativity, gamification, and AI-driven insights."
   ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+  resumeLink: "https://docs.google.com/document/d/1gPEw2K5SaugieCeGg6WuUmQ_iXw8QHCYFk2NB9T0gik/edit?usp=sharing", // Replace with your resume link if available
+  displayGreeting: true, // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
-
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  linkedin: "https://www.linkedin.com/in/murilotozato/",
+  gmail: "muriloht123@gmail.com",
+  medium: "https://medium.com/@muriloht123",
+  github: "https://github.com/murilotozato",
+  // Add additional links if desired (e.g., Twitter, Dribbble)
+  display: true, // Set true to display this section, defaults to false
 };
 
 // Skills Section
-
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "Creative UX/UI Designer focused on crafting engaging and user-centered digital experiences.",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    emoji("⚡ Designing intuitive and visually compelling user interfaces for web and mobile platforms"),
+    emoji("⚡ Integrating gamification and other techniques to enhance user engagement and retention"),
+    emoji("⚡ Leveraging foward-thinking insights to create adaptive and personalized user experiences"),
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
+  /* Use the correct Font Awesome Classname to view your icon
+     https://fontawesome.com/icons?d=gallery */
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
+      skillName: "Figma",
+      fontAwesomeClassname: "fab fa-figma",
     },
     {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
+      skillName: "Adobe XD",
+      imagePath: "adobe-xd-icon.png",
     },
     {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
+      skillName: "Sketch",
+      fontAwesomeClassname: "fab fa-sketch",
+    },
+    {
+      skillName: "HTML5",
+      fontAwesomeClassname: "fab fa-html5",
+    },
+    {
+      skillName: "CSS3",
+      fontAwesomeClassname: "fab fa-css3-alt",
     },
     {
       skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
+      fontAwesomeClassname: "fab fa-js",
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
+      skillName: "Automation Tools",
+      fontAwesomeClassname: "fas fa-robot",
     },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
-    },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
-    }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true, // Set false to hide this section, defaults to true
 };
 
 // Education Section
-
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: false, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      schoolName: "EBAC - Escola Britânica de Artes Criativas e Tecnologia",
+      logo: require("./assets/images/ebacLogo.png"), // Replace with your institution logo
+      subHeader: "Certificate in UX/UI Design",
+      duration: "2022 - 2024",
+      desc: "Intensive training in user-centered design, design thinking, and digital innovation.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
+        "Mastered methodologies like Design Thinking and Double Diamond",
+        "Developed hands-on projects integrating gamification and AI in design",
+      ],
     },
     {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
-    }
-  ]
-};
-
-// Your top 3 proficient stacks/tech experience
-
-const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      schoolName: "SENAI",
+      logo: require("./assets/images/senaiLogo.png"), // Replace with your institution logo
+      subHeader: "Technical Training in Digital Design",
+      duration: "2020",
+      desc: "Gained foundational skills in digital design and technology.",
     },
-    {
-      Stack: "Backend",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
 
-// Work experience section
-
-const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+// Tech Stack / Proficiency Section (Customized for UX/UI)
+const techStack = {
+  viewSkillBars: false, // Set it to true to show Proficiency Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
+      Stack: "Visual Design",
+      progressPercentage: "97%",
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      Stack: "Interaction Design",
+      progressPercentage: "92%",
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }
-  ]
+      Stack: "User Research",
+      progressPercentage: "90%",
+    },
+  ],
+  displayCodersrank: false, // Set true to display codersrank badges, defaults to false
 };
 
-/* Your Open Source Section to View Your Github Pinned Projects
-To know how to get github key look at readme.md */
+// Work Experience Section
+const workExperiences = {
+  display: false, // Set it to true to show workExperiences Section
+  experience: [
+    {
+      role: "UX/UI Designer",
+      company: "CloudWalk",
+      companylogo: require("./assets/images/facebookLogo.png"), // Add your CloudWalk logo or placeholder
+      date: "June 2023 – Present",
+      desc: "Designing engaging fintech experiences by integrating AI-driven insights and user-centered design practices to create seamless digital payment solutions.",
+      descBullets: [
+        "Developed intuitive interfaces that simplify complex financial interactions",
+        "Leveraged user research and testing to drive design decisions",
+      ],
+    },
+    {
+      role: "UX/UI Designer",
+      company: "Innovate Design Studio",
+      companylogo: require("./assets/images/quoraLogo.png"), // Replace with a relevant logo
+      date: "January 2021 – May 2023",
+      desc: "Crafted responsive digital experiences and interactive prototypes for diverse clients, with a focus on gamification and AI integration.",
+      descBullets: [
+        "Conducted comprehensive user research to inform design strategies",
+        "Implemented iterative design processes to enhance user engagement",
+      ],
+    },
+    {
+      role: "UX/UI Design Intern",
+      company: "Creative Solutions",
+      companylogo: require("./assets/images/airbnbLogo.png"), // Replace with a relevant logo
+      date: "June 2020 – December 2020",
+      desc: "Supported the design team in creating user interfaces and prototypes, gaining hands-on experience in digital product design.",
+    },
+  ],
+};
 
+// Open Source Section (Optional - can include your design contributions or projects)
 const openSource = {
   showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Cases",
+  subtitle: "Explore my design work",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
-        }
-        //  you can add extra buttons here.
-      ]
+      image: "sumuppix.png", // Add the file "sumuppix.png" in src/assets/images/
+      title: "SumUp & Pix - Facilitating Digital Payments",
+      description: {
+        Problem: "Simplify digital payment processes by integrating SumUp and Pix to reduce transaction friction and boost user trust.",
+        Challenge: "Designing a secure yet user-friendly interface that streamlines complex payment flows while ensuring accessibility across multiple devices.",
+        Results: "Delivered a seamless, intuitive payment experience that increased user confidence, reduced transaction errors, and enhanced overall accessibility."
+      },
+      link: "https://www.figma.com/design/id6ng2TdA8pqUM464MWNfQ/SumUP---Pix?node-id=21-2&t=lLGRMXPiXn74ZIx6-1"
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
-      ]
+      image: "gamifiedTest.png", // Add the file "gamifiedTest.png" in src/assets/images/
+      title: "Gamified Vocational Test",
+      description: {
+        Problem: "Reimagine traditional career assessments to transform them into engaging, interactive journeys that truly resonate with users.",
+        Challenge: "Infusing gamification elements into the test while preserving its evaluative integrity, ensuring that increased engagement doesn't compromise result accuracy.",
+        Results: "Created an immersive and fun vocational test that boosted user engagement, improved retention, and provided actionable insights into career preferences."
+      },
+      link: "https://www.figma.com/design/41pGyT3sNUjGTbHlfxuDwV/Projeto-de-Aplicativo-Teste?node-id=51-2&t=lLGRMXPiXn74ZIx6-1"
+    },
+    {
+      image: "aiBanking.png", // Add the file "aiBanking.png" in src/assets/images/
+      title: "Innovative AI for Banking Apps",
+      description: {
+        Problem: "Transform traditional banking interfaces by integrating AI-driven personalization to create adaptive, user-friendly digital experiences.",
+        Challenge: "Balancing advanced AI features with the need for simplicity, security, and an intuitive design that caters to a diverse user base.",
+        Results: "Proposed a dynamic, AI-powered interface that streamlined complex banking interactions, enhanced personalization, and improved overall user satisfaction."
+      },
+      link: "https://app.uizard.io/p/54e03da9/overview"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Achievement Section
-// Include certificates, talks etc
-
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
-
+  title: emoji("Achievements And Certifications"),
+  subtitle: "A showcase of my professional certifications, demonstrating my dedication to continuous learning and skill enhancement in UX/UI design.",
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
-      subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+      title: "[Certification Name 1]",  // Replace with your first certification name
+      subtitle: "Certified by LinkedIn Learning",
+      image: require("./assets/images/googleAssistantLogo.webp"),  // Path to the logo
+      imageAlt: "LinkedIn Learning Logo",
       footerLink: [
         {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
+          name: "View Certificate",
+          url: "[Credential URL 1]",  // Replace with your first certification URL
         },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
-      ]
+      ],
     },
     {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
-    },
-
-    {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
+      title: "[Certification Name 2]",  // Replace with your second certification name
+      subtitle: "Certified by LinkedIn Learning",
       image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
+      imageAlt: "LinkedIn Learning Logo",
       footerLink: [
-        {name: "Certification", url: ""},
         {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
-      ]
-    }
+          name: "View Certificate",
+          url: "[Credential URL 2]",  // Replace with your second certification URL
+        },
+      ],
+    },
+    // Add more entries as needed for additional certifications
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false,  // Ensures the section is visible
 };
 
 // Blogs Section
-
 const blogSection = {
   title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  subtitle: "Sharing insights on UX/UI, design innovation, and the power of gamification.",
+  displayMediumBlogs: "true", // Set true to display fetched Medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
+      url: "https://medium.com/@muriloht123/my-journey-into-gamified-ux-ui-design-123456789",
+      title: "My Journey into Gamified UX/UI Design",
+      description: "Exploring the process of transforming traditional tests into engaging, interactive experiences.",
     },
     {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
+      url: "https://medium.com/@muriloht123/the-future-of-ai-in-digital-design-987654321",
+      title: "The Future of AI in Digital Design",
+      description: "How artificial intelligence is reshaping user experiences and design workflows.",
+    },
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false, // Set false to hide this section, defaults to true
 };
 
-// Talks Sections
-
+// Talks Section
 const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
+  title: "Testimonials",
+  subtitle: "What people say about me 💬",
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+      quote: "I mentored Murilo during his first steps in the world of UX, and I can affirm that he is highly creative and possesses a strong critical sense. Not only does he quickly absorb knowledge, but he also constantly seeks new ways to optimize processes, making them more agile and efficient. I believe he has a brilliant future ahead!",
+      name: "Yasmin",
+      role: "Senior UX/UI Designer",
+      profile_url: "https://www.linkedin.com/in/yasminlogcos/",
+      image: "yasmin.jpg"  // Image file name
+    },
+    {
+      quote: "Murilo Tozato was an unexpectedly great colleague with whom I had the honor of growing, developing professionally, and pursuing a career in the same field. He has a character shaped by challenges and an immense drive to grow and dedicate himself.",
+      name: "Alexandre",
+      role: "Graphic Design Artist",
+      profile_url: "https://www.linkedin.com/in/alexandre-oliveira-fernandes-a420b9209/",
+      image: "alexandre.jpg"  // Image file name
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Podcast Section
-
 const podcastSection = {
   title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
+  subtitle: "Conversations about design, AI, and digital innovation.",
   podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
+    "https://anchor.fm/murilotozato-podcast/embed", // Replace with your podcast embed link
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false, // Set false to hide this section, defaults to true
 };
 
 // Resume Section
 const resumeSection = {
   title: "Resume",
-  subtitle: "Feel free to download my resume",
-
-  // Please Provide with Your Podcast embeded Link
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "Download my resume for detailed insights into my experience and skills.",
+  display: true, // Set false to hide this section, defaults to true
 };
 
+// Contact Info
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  title: emoji("Reach out to me:"),
+  subtitle: "Let’s create something amazing together!",
+  number: "+55 41 99801-6114",
+  email_address: "muriloht123@gmail.com",
 };
 
 // Twitter Section
-
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  userName: "murilotozato", // Replace with your Twitter username without @
+  display: false, // Set true to display this section, defaults to false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true; // Set true if you are looking for opportunities
 
 export {
   illustration,
@@ -403,5 +336,5 @@ export {
   contactInfo,
   twitterDetails,
   isHireable,
-  resumeSection
+  resumeSection,
 };

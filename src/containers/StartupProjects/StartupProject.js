@@ -1,93 +1,89 @@
-import React, {useContext} from "react";
-import "./StartupProjects.scss";
-import {bigProjects} from "../../portfolio";
-import {Fade} from "react-reveal";
-import StyleContext from "../../contexts/StyleContext";
+import React, { useRef } from "react";
+import "./StartupProject.scss";
+import { bigProjects } from "../../portfolio";
+import { Fade } from "react-reveal";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import sumuppix from "../../assets/images/sumuppix.png";
+import gamifiedTest from "../../assets/images/gamifiedTest.png";
+import aiBanking from "../../assets/images/aiBanking.png";
+
+const imageMap = {
+  "sumuppix.png": sumuppix,
+  "gamifiedTest.png": gamifiedTest,
+  "aiBanking.png": aiBanking,
+};
 
 export default function StartupProject() {
-  function openUrlInNewTab(url) {
-    if (!url) {
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
+  const sliderRef = useRef(null);
 
-  const {isDark} = useContext(StyleContext);
-  if (!bigProjects.display) {
-    return null;
-  }
+  if (!bigProjects.display) return null;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    adaptiveHeight: true,
+    prevArrow: <button className="carousel-arrow prev" aria-label="Previous slide" />,
+    nextArrow: <button className="carousel-arrow next" aria-label="Next slide" />,
+  };
+
+  const handleImageLoad = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(0);
+    }
+  };
+
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="projects">
-        <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode project-subtitle"
-                : "subTitle project-subtitle"
-            }
-          >
-            {bigProjects.subtitle}
-          </p>
-
-          <div className="projects-container">
-            {bigProjects.projects.map((project, i) => {
-              return (
-                <div
-                  key={i}
-                  className={
-                    isDark
-                      ? "dark-mode project-card project-card-dark"
-                      : "project-card project-card-light"
-                  }
-                >
-                  {project.image ? (
-                    <div className="project-image">
-                      <img
-                        src={project.image}
-                        alt={project.projectName}
-                        className="card-image"
-                      ></img>
-                    </div>
-                  ) : null}
-                  <div className="project-detail">
-                    <h5
-                      className={isDark ? "dark-mode card-title" : "card-title"}
-                    >
-                      {project.projectName}
-                    </h5>
-                    <p
-                      className={
-                        isDark ? "dark-mode card-subtitle" : "card-subtitle"
-                      }
-                    >
-                      {project.projectDesc}
-                    </p>
-                    {project.footerLink ? (
-                      <div className="project-card-footer">
-                        {project.footerLink.map((link, i) => {
-                          return (
-                            <span
-                              key={i}
-                              className={
-                                isDark ? "dark-mode project-tag" : "project-tag"
-                              }
-                              onClick={() => openUrlInNewTab(link.url)}
-                            >
-                              {link.name}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+        <div className="project-header">
+          <h1 className="skills-heading">Cases</h1>
+          <p className="project-subtitle">Explore my design work</p>
         </div>
+        <Slider {...settings} ref={sliderRef}>
+          {bigProjects.projects.map((project, i) => (
+            <div key={i}>
+              <div className="project-card">
+                <div className="project-image">
+                  <img
+                    src={imageMap[project.image]}
+                    alt={`Screenshot of ${project.title} project`}
+                    className="card-image"
+                    onLoad={handleImageLoad}
+                  />
+                </div>
+                <div className="project-detail">
+                  <h5 className="card-title">{project.title}</h5>
+                  <div className="project-description">
+                    <p><strong className="description-label">Problem:</strong> {project.description.Problem}</p>
+                    <p><strong className="description-label">Challenge:</strong> {project.description.Challenge}</p>
+                    <p><strong className="description-label">Results:</strong> {project.description.Results}</p>
+                  </div>
+                  {project.link && (
+                    <div className="project-card-footer">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="view-project-button"
+                        aria-label={`View ${project.title} project`}
+                        role="button"
+                      >
+                        View Project <span className="arrow-icon">➤</span>
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </Fade>
   );

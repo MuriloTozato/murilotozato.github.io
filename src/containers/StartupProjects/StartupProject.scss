@@ -1,0 +1,181 @@
+.main {
+  padding: 40px 20px;
+}
+
+.project-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.skills-heading {
+  font-size: 56px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.project-subtitle {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #1a2533;
+  padding: 2.5rem; /* Increased padding for more space */
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 600px;
+}
+
+.project-image {
+  width: 50%;
+  margin-right: 2rem;
+  height: 500px !important;
+}
+
+.card-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 8px;
+}
+
+.project-detail {
+  width: 50%;
+  text-align: left;
+  color: #ffffff;
+  padding: 1rem; /* Added padding for breathing room */
+}
+
+.project-detail .card-title {
+  font-size: 32px; /* Larger title for better hierarchy */
+  font-weight: 700;
+  margin: 0 0 20px 0; /* Increased margin for separation */
+  color: #ffffff !important;
+}
+
+.project-description {
+  font-size: 20px; /* Larger text for readability */
+  line-height: 1.8; /* Increased line spacing */
+}
+
+.description-label {
+  font-weight: 700; /* Bold labels for emphasis */
+}
+
+/* View Project Button */
+.view-project-button {
+  display: inline-block;
+  padding: 14px 28px; /* Larger padding for better clickability */
+  background: linear-gradient(135deg, #ff9900, #ff6200);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 18px; /* Larger text */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.view-project-button:hover {
+  background: linear-gradient(135deg, #ff6200, #e55b00);
+  transform: scale(1.05); /* More pronounced scale effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.view-project-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.5);
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.carousel-arrow:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Focus state for accessibility */
+}
+
+.carousel-arrow.prev {
+  left: -60px;
+}
+
+.carousel-arrow.next {
+  right: -60px;
+}
+
+/* Carousel Dots */
+.slick-dots {
+  bottom: -40px; /* Position dots further below the carousel */
+}
+
+.slick-dots li {
+  margin: 0 8px; /* More spacing between dots */
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* Larger dots */
+  color: #ffffff !important; /* White for inactive dots */
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffffff !important; /* White for active dot */
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    max-width: 90%;
+    min-height: auto;
+    padding: 1.5rem; /* Reduced padding for mobile */
+  }
+  .project-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    height: 300px !important;
+  }
+  .card-image {
+    height: 100% !important;
+  }
+  .project-detail {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .project-detail .card-title {
+    font-size: 28px; /* Slightly smaller on mobile */
+  }
+  .project-description {
+    font-size: 18px; /* Slightly smaller on mobile */
+  }
+  .carousel-arrow.prev {
+    left: -30px;
+  }
+  .carousel-arrow.next {
+    right: -30px;
+  }
+}
+
+/* Override Carousel Restrictions */
+.slick-slide,
+.slick-slide * {
+  height: auto !important;
+}
